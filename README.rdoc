@@ -1,5 +1,7 @@
 == Ruby Bookshelf
 
+{<img src="https://circleci.com/gh/taylorrf/rubybookshelf.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/taylorrf/rubybookshelf]
+
 * Ruby version
 2.2.3
 
