@@ -1,44 +1,59 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 ruby "2.2.3"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem "airbrake"
+gem "autoprefixer-rails"
+gem "bourbon", "~> 4.2.0"
+gem "coffee-rails", "~> 4.1.0"
+gem "delayed_job_active_record"
+gem "email_validator"
+gem "flutie"
+gem "high_voltage"
+gem "jquery-rails"
+gem "neat", "~> 1.7.0"
+gem "newrelic_rpm", ">= 3.9.8"
+gem "normalize-rails", "~> 3.0.0"
+gem "pg"
+gem "puma"
+gem "rack-canonical-host"
+gem "rails", "~> 4.2.0"
+gem "recipient_interceptor"
+gem "sass-rails", "~> 5.0"
+gem "simple_form"
+gem "title"
+gem "uglifier"
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-gem 'thin', '~> 1.6', '>= 1.6.4'
+group :development do
+  gem "quiet_assets"
+  gem "refills"
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "web-console"
+end
 
 group :development, :test do
-  gem 'byebug'
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem "awesome_print"
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "i18n-tasks"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.3.0"
 end
 
 group :test do
-  gem 'rspec', '~> 3.2.0'
-  gem 'rspec-rails', '~> 3.0'
+  gem "capybara-webkit"
+  gem "database_cleaner"
+  gem "formulaic"
+  gem "launchy"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "timecop"
+  gem "webmock"
+end
+
+group :staging, :production do
+  gem "rack-timeout"
 end
