@@ -17,3 +17,7 @@ en:
 
   titles:
     application: Rubybookshelf
+
+  books:
+    index:
+      no_books_yet: You haven't added any books yet.
