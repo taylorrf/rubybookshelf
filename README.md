@@ -24,6 +24,13 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
 
+## Useful Links
+
+* [GitHub repo](https://github.com/taylorrf/rubybookshelf)
+* [Production app on Heroku](http://rubybookshelf.herokuapp.com)
+* [Trello board](https://trello.com/b/rxNcTk1k/ruby-bookshelf)
+* [Slack room](https://theangledbrackets.slack.com/)
+
 ## Guidelines
 
 Use the following guides for getting things done, programming well, and
