@@ -1,4 +1,4 @@
-# Rubybookshelf
+# Ruby Bookshelf
 
 [![Build Status](https://circleci.com/gh/taylorrf/rubybookshelf.svg?style=svg)](https://circleci.com/gh/taylorrf/rubybookshelf)
 
