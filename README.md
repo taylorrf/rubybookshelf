@@ -1,5 +1,7 @@
 # Rubybookshelf
 
+[![Build Status](https://circleci.com/gh/taylorrf/rubybookshelf.svg?style=svg)](https://circleci.com/gh/taylorrf/rubybookshelf)
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
