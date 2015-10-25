@@ -7,3 +7,8 @@ database:
 test:
   override:
     - bundle exec rake
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: rubybookshelf-staging
