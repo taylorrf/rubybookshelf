@@ -1,0 +1,6 @@
+<h1><%= book.title %></h1>
+
+<% if book.has_summary? %>
+  <% # doesn't yet handle paragraphs, line breaks yet %>
+  <div class="summary"><%= book.summary %></div>
+<% end %>

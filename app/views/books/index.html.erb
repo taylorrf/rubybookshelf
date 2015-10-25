@@ -1,7 +1,7 @@
 <% if books.any? %>
   <ul class="books">
     <% books.each do |book| %>
-      <li><%= book.title %></li>
+      <li><%= link_to book.title, book %></li>
     <% end %>
   </ul>
 <% else %>
