@@ -1,0 +1,9 @@
+<% if books.any? %>
+  <ul class="books">
+    <% books.each do |book| %>
+      <li><%= book.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= t(".no_books_yet") %>
+<% end %>
