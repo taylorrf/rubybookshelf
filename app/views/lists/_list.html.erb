@@ -1,0 +1,12 @@
+<li class="list">
+  <h2><%= list.name %></h2>
+  <% if list.empty? %>
+    <%= t(".empty") %>
+  <% else %>
+    <ul class="books">
+      <% list.highlights(maximum: 5).each do |book| %>
+        <li class="book"><%= link_to book.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

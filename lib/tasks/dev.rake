@@ -10,11 +10,17 @@ if Rails.env.development? || Rails.env.test?
       programming = create(:genre, name: "Programming")
       create(:genre, name: "Science")
 
-      create(:book, title: "The Fellowship of the Ring", genre: fantasy,
+      fellowship = create(:book, title: "The Fellowship of the Ring", genre: fantasy,
              summary: "The first book in the series")
-      create(:book, title: "The Two Towers", genre: fantasy)
+      two_towers = create(:book, title: "The Two Towers", genre: fantasy)
       create(:book, title: "Programming Ruby", genre: programming)
       create(:book, title: "Oxford English Dictionary")
+
+      create(:list, name: "Empty List")
+      best_fantasy = create(:list, name: "Best Fantasy")
+
+      create(:list_entry, book: fellowship, list: best_fantasy)
+      create(:list_entry, book: two_towers, list: best_fantasy)
     end
   end
 end

@@ -23,3 +23,9 @@ en:
       no_books_yet: You haven't added any books yet.
     filter:
       button: "Filter"
+
+  lists:
+    list:
+      empty: This list is empty
+    index:
+      no_lists_yet: You haven't added any lists yet.
