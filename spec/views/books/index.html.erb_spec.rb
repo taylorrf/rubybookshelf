@@ -8,7 +8,8 @@ RSpec.describe "books/index" do
         build_stubbed(:book, title: "The Two Towers")
       ]
 
-      render template: "books/index", locals: { books: books }
+      filter = Filter.new
+      render template: "books/index", locals: { books: books, filter: filter }
 
       within("ul.books") do
         expect(rendered).to have_css("li", text: "The Fellowship of the Ring")
@@ -21,7 +22,8 @@ RSpec.describe "books/index" do
     it "displays an appropriate notice" do
       books = []
 
-      render template: "books/index", locals: { books: books }
+      render template: "books/index", locals: { books: books,
+                                                filter: Filter.new }
 
       expect(rendered).to have_text(t("books.index.no_books_yet"))
     end

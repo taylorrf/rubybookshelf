@@ -21,3 +21,5 @@ en:
   books:
     index:
       no_books_yet: You haven't added any books yet.
+    filter:
+      button: "Filter"
