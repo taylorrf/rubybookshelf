@@ -1,0 +1,7 @@
+<% if lists.any? %>
+  <ul class="lists">
+    <%= render lists %>
+  </ul>
+<% else %>
+  <%= t(".no_lists_yet") %>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025170953) do
+ActiveRecord::Schema.define(version: 20151026205814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,4 +51,25 @@ ActiveRecord::Schema.define(version: 20151025170953) do
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true, using: :btree
 
+  create_table "list_entries", force: :cascade do |t|
+    t.integer  "list_id",    null: false
+    t.integer  "book_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "list_entries", ["book_id"], name: "index_list_entries_on_book_id", using: :btree
+  add_index "list_entries", ["created_at"], name: "index_list_entries_on_created_at", using: :btree
+  add_index "list_entries", ["list_id", "book_id"], name: "index_list_entries_on_list_id_and_book_id", unique: true, using: :btree
+  add_index "list_entries", ["list_id"], name: "index_list_entries_on_list_id", using: :btree
+  add_index "list_entries", ["updated_at"], name: "index_list_entries_on_updated_at", using: :btree
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "list_entries", "books"
+  add_foreign_key "list_entries", "lists"
 end
