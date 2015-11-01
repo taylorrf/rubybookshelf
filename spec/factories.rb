@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :author do
+    name "Uncle Bob"
+  end
+
   factory :book do
     title "Default Book Title"
 

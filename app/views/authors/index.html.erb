@@ -1,0 +1,9 @@
+<% if authors.any? %>
+  <ul class="authors">
+    <% authors.each do |author| %>
+      <li><%=author.name%><li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= t(".no_authors_found") %>
+<% end%>
