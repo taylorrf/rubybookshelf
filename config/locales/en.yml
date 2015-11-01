@@ -29,3 +29,7 @@ en:
       empty: This list is empty
     index:
       no_lists_yet: You haven't added any lists yet.
+
+  authors:
+    index:
+      no_authors_found: Sorry, but we don't have authors yet.
