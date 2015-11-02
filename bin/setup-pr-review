@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Set up database for heroku pr review app
+bundle exec rake db:setup

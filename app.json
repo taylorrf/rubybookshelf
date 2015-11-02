@@ -1,7 +1,7 @@
 {
   "name":"rubybookshelf",
   "scripts":{
-    "postdeploy":"bin/setup"
+    "postdeploy":"bin/setup-pr-review"
   },
   "env":{
     "APPLICATION_HOST":{
