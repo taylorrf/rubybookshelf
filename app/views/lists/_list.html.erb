@@ -1,5 +1,5 @@
 <li class="list">
-  <h2><%= list.name %></h2>
+  <h2><%= link_to list.name, list %></h2>
   <% if list.empty? %>
     <%= t(".empty") %>
   <% else %>
