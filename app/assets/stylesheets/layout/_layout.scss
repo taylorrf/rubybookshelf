@@ -1,0 +1,51 @@
+body {
+  background-color: $white;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  font-family: $base-font-family;
+  line-height: 20px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+
+.content {
+  @include outer-container;
+  max-width: $max-width;
+  flex: 1;
+  padding: 4em $side-padding 6em;
+  width: 100%;
+
+  ul, ol {
+    padding: 0;
+  }
+
+  li {
+    margin-top: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+}
+
+@mixin dashboard-large {
+  @media screen and (min-width: 1050px) {
+    @content;
+  }
+}
+
+@mixin dashboard-medium {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin dashboard-small-only {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
