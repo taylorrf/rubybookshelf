@@ -6,6 +6,7 @@
       <li><%= link_to book.title, book %></li>
     <% end %>
   </ul>
+  <%= paginate books %>
 <% else %>
   <h1><%= t(".no_books_yet") %></h1>
 <% end %>

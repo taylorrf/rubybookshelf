@@ -9,7 +9,10 @@ RSpec.describe "books/index" do
       ]
 
       filter = Filter.new
-      render template: "books/index", locals: { books: books, filter: filter }
+      render template: "books/index", locals: {
+        books: Kaminari.paginate_array(books).page,
+        filter: filter
+      }
 
       within("ul.books") do
         expect(rendered).to have_css("li", text: "The Fellowship of the Ring")
@@ -22,8 +25,10 @@ RSpec.describe "books/index" do
     it "displays an appropriate notice" do
       books = []
 
-      render template: "books/index", locals: { books: books,
-                                                filter: Filter.new }
+      render template: "books/index", locals: {
+        books: Kaminari.paginate_array(books).page,
+        filter: Filter.new
+      }
 
       expect(rendered).to have_text(t("books.index.no_books_yet"))
     end

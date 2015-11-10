@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   def index
-    render locals: { books: Book.all, filter: Filter.new }
+    render locals: {
+      books: Book.page(params[:page]),
+      filter: Filter.new
+    }
   end
 
   def show

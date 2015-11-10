@@ -21,6 +21,9 @@ if Rails.env.development? || Rails.env.test?
 
       create(:list_entry, book: fellowship, list: best_fantasy)
       create(:list_entry, book: two_towers, list: best_fantasy)
+
+      # for testing pagination
+      create_list(:book, 25, genre: fantasy)
     end
   end
 end

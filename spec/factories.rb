@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :book do
-    title "Default Book Title"
+    sequence(:title) { |n| "Default Book Title #{n}" }
 
     trait :no_genre do
       genre nil
