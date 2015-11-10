@@ -1,0 +1,26 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">
+    <%= image_tag "logo_symbol.png", alt: "Ruby Bookshelf" %>
+  </div>
+  <div class="footer-links">
+    <ul>
+      <li><h3>Navigate</h3></li>
+      <li><%= link_to t("shared.header.books"), books_path %></li>
+      <li><%= link_to t("shared.header.lists"), lists_path %></li>
+      <li><%= link_to t("shared.header.authors"), authors_path %></li>
+    </ul>
+    <ul>
+      <li><h3>Follow The Team</h3></li>
+      <li><%= link_to "Andy Waite", "http://www.twitter.com/andyw8", target: "_new" %></li>
+      <li><%= link_to "Pedro Moreira", "https://twitter.com/pedrosmmoreira", target: "_new" %></li>
+      <li><%= link_to "Tailor Fontela", "http://www.twitter.com/tailorfontela", target: "_new" %></li>
+    </ul>
+    <ul>
+      <li><h3>Legal</h3></li>
+      <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+      <li><a href="javascript:void(0)">Privacy Policy</a></li>
+    </ul>
+  </div>
+  <hr>
+  <p><i>"Keep reading books, but remember that a book is only a book, and you should learn to think for yourself."</i> - Maxim Gorky</p>
+</footer>
