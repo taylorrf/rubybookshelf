@@ -1,0 +1,17 @@
+<header class="header-2" role="contentinfo">
+  <div class="header-logo">
+    <%= link_to image_tag("logo_symbol.png"), root_path, alt: "Ruby Bookshelf"  %>
+  </div>
+    <ul>
+      <li><%= link_to t("shared.header.books"), books_path %></li>
+      <li><%= link_to t("shared.header.lists"), lists_path %></li>
+      <li><%= link_to t("shared.header.authors"), authors_path %></li>
+    </ul>
+
+    <div class="header-secondary-links">
+      <ul>
+        <li><a href="javascript:void(0)">Create your Free Account</a></li>
+        <li><a href="javascript:void(0)">Login</a></li>
+      </ul>
+    </div>
+</header>

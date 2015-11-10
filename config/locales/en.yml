@@ -16,7 +16,7 @@ en:
         "%B %d"
 
   titles:
-    application: Rubybookshelf
+    application: "Ruby Bookshelf"
 
   books:
     index:
@@ -33,3 +33,9 @@ en:
   authors:
     index:
       no_authors_found: Sorry, but we don't have authors yet.
+
+  shared:
+    header:
+      books: "Books"
+      lists: "Lists"
+      authors: "Authors"

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "books#index"
+  root "pages#home"
 
   resources :books, only: [:index, :show] do
     collection do

@@ -2,8 +2,15 @@
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
 
+$bookshelf-red: #E01520;
+$bookshelf-red-1: #EC1622;
+$bookshelf-red-2: #990E16;
+
 // Font Sizes
 $base-font-size: 1em;
+$font-size-smallest: rem(12);
+$font-size-small: 0.96rem;
+
 
 // Line height
 $base-line-height: 1.5;
@@ -14,12 +21,16 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$side-padding: 1em;
+$navigation-height: 60px;
+
 
 // Colors
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$white: #fff;
 
 // Font Colors
 $base-font-color: $dark-gray;

@@ -15,7 +15,14 @@
 </head>
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
-  <%= yield %>
+  <%= render "shared/header"%>
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <%= render "shared/footer"%>
+
   <%= render "javascript" %>
 </body>
 </html>
