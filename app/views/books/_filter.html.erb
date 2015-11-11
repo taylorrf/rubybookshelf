@@ -1,4 +1,4 @@
 <%= simple_form_for filter, url: book_filter_path, method: :get do |form| %>
-  <%= form.input :genre_id, collection: filter.genres, include_blank: false %>
+  <%= form.input :genre_id, collection: filter.genres, include_blank: true %>
   <%= form.submit t(".button") %>
 <% end %>

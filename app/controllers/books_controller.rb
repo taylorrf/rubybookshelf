@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
     render locals: {
-      books: Book.page(params[:page]),
+      books: Book.sort_by(params[:sort]).page(params[:page]),
       filter: Filter.new
     }
   end

@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "books/index" do
   context "when there are books to list" do
     it "lists the books" do
+      allow(view).to receive(:sort_path)
       books = [
         build_stubbed(:book, title: "The Fellowship of the Ring"),
         build_stubbed(:book, title: "The Two Towers")

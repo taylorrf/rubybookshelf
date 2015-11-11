@@ -46,4 +46,42 @@ RSpec.describe Book do
       expect(result).to eq("default_cover.jpg")
     end
   end
+
+  describe "#sort_by" do
+    context "when the criteria 'added'" do
+      it "lists the newest-added first" do
+        oldest = create(:book, released_on: 1.month.ago)
+        newest = create(:book, released_on: 1.day.ago)
+        middle = create(:book, released_on: 1.week.ago)
+
+        result = Book.sort_by(Book::SORT_CRITERIA_ADDED)
+
+        expect(result).to eq([newest, middle, oldest])
+      end
+    end
+
+    context "otherwise" do
+      it "lists the books alphabetically" do
+        book_a = create(:book, title: "Book A")
+        book_c = create(:book, title: "Book C")
+        book_b = create(:book, title: "Book B")
+
+        result = Book.sort_by("").map(&:title)
+
+        expect(result).to eq([book_a, book_b, book_c].map(&:title))
+      end
+
+      it "is case-insensitive" do
+        book_uppercase_a = create(:book, title: "Book A")
+        book_uppercase_c = create(:book, title: "Book C")
+        book_lowercase_b = create(:book, title: "Book b")
+
+        result = Book.sort_by("").map(&:title)
+
+        expect(result).to eq(
+          [book_uppercase_a, book_lowercase_b, book_uppercase_c].map(&:title)
+        )
+      end
+    end
+  end
 end
