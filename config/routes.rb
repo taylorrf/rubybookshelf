@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:index, :show]
   resources :authors, only: :index
+  resource :registration, only: [:new, :create]
+  resource :session, only: [:create, :destroy]
+
+  get "/login", to: "sessions#new", as: :login
 end

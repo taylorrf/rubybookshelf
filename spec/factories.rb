@@ -23,4 +23,9 @@ FactoryGirl.define do
     book
     list
   end
+
+  factory :user do
+    sequence(:email) { |n| "user_#{n}@example.com" }
+    password "examplepassword"
+  end
 end

@@ -36,8 +36,24 @@ en:
     index:
       no_authors_found: Sorry, but we don't have authors yet.
 
+  registration:
+    email: "Email"
+    password: "Password"
+    login: "Login"
+    login_disable: "Logging in..."
+    register: "Create account"
+    register_disable: "Creating account..."
+    success: "Welcome, %{email}!"
+
+  session:
+    success: "Welcome back, %{email}!"
+    error: "Incorrect login information"
+
   shared:
     header:
       books: "Books"
       lists: "Lists"
       authors: "Authors"
+      registration: "Create your free account"
+      login: "Login"
+      logout: "Log out"

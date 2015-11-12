@@ -1,6 +1,6 @@
 <header class="header-2" role="contentinfo">
   <div class="header-logo">
-    <%= link_to image_tag("logo_symbol.png"), root_path, alt: "Ruby Bookshelf"  %>
+    <%= link_to image_tag("logo_symbol.png"), root_path, alt: "Ruby Bookshelf" %>
   </div>
     <ul>
       <li><%= link_to t("shared.header.books"), books_path %></li>
@@ -10,8 +10,18 @@
 
     <div class="header-secondary-links">
       <ul>
-        <li><a href="javascript:void(0)">Create your Free Account</a></li>
-        <li><a href="javascript:void(0)">Login</a></li>
+      <% if current_user %>
+        <li>
+          <%= link_to t("shared.header.logout"), session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t("shared.header.registration"), new_registration_path %>
+        </li>
+        <li>
+          <%= link_to t("shared.header.login"), login_path %>
+        </li>
+      <% end %>
       </ul>
     </div>
 </header>
