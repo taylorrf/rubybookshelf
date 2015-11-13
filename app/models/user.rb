@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
 
   validates :email, email: true, uniqueness: true
 
-  class << self
-    def lookup_for_authentication_with(identifier:)
-      find_by(email: identifier) || Guest.new
-    end
+  def self.lookup_for_authentication_with(identifier:)
+    find_by(email: identifier) || Guest.new
   end
 end

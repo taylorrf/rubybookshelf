@@ -10,7 +10,7 @@
 
     <div class="header-secondary-links">
       <ul>
-      <% if current_user %>
+      <% if signed_in? %>
         <li>
           <%= link_to t("shared.header.logout"), session_path, method: :delete %>
         </li>
