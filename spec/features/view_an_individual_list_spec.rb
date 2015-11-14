@@ -19,7 +19,7 @@ RSpec.feature "View an individual list", type: :feature do
   end
 
   def have_book(title)
-    have_css("ul.books > li", text: title)
+    have_css(".book h1", text: title)
   end
 
   def add_book_to_list(title:, list:)

@@ -3,9 +3,5 @@
 <% if list.empty? %>
   <%= t(".empty") %>
 <% else %>
-  <ul class="books" %>
-    <% list.books.each do |book| %>
-      <li><%= link_to book.title, book %></li>
-    <% end %>
-  </ul>
+  <%= render "books/books", books: list.books %>
 <% end %>

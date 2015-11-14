@@ -22,7 +22,7 @@ RSpec.describe "lists/show" do
 
       render template: "lists/show", locals: { list: list }
 
-      expect(rendered).to have_css("ul.books li")
+      expect(rendered).to have_css(".book", count: 2)
     end
   end
 end
