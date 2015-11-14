@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20151111234610) do
   enable_extension "plpgsql"
 
   create_table "authors", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
 
   add_index "authors", ["name"], name: "index_authors_on_name", using: :btree
@@ -30,8 +31,11 @@ ActiveRecord::Schema.define(version: 20151111234610) do
     t.datetime "updated_at", null: false
     t.text     "summary"
     t.integer  "genre_id"
+    t.integer  "author_id"
+    t.string   "cover"
   end
 
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
   add_index "books", ["genre_id"], name: "index_books_on_genre_id", using: :btree
   add_index "books", ["title"], name: "index_books_on_title", using: :btree
 

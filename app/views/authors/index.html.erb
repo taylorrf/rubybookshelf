@@ -1,9 +1,16 @@
+<h1><%= t(".header")%></h1>
+
 <% if authors.any? %>
-  <ul class="authors">
-    <% authors.each do |author| %>
-      <li><%=author.name%><li>
-    <% end %>
-  </ul>
+  <% authors.each do |author| %>
+  <div class="authors-list">
+    <h2><%= link_to author.name, author %></h1>
+    <ul>
+      <% author.popular_books.each do |book| %>
+        <li><%= link_to image_tag(book.sample_cover), book %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 <% else %>
   <h1><%= t(".no_authors_found") %></h1>
 <% end%>

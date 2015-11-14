@@ -1,0 +1,27 @@
+<header class="header-2" role="contentinfo">
+  <div class="header-logo">
+    <%= link_to image_tag("logo_symbol.png"), root_path, alt: "Ruby Bookshelf" %>
+  </div>
+    <ul>
+      <li><%= link_to t("application.menu.books"), books_path %></li>
+      <li><%= link_to t("application.menu.lists"), lists_path %></li>
+      <li><%= link_to t("application.menu.authors"), authors_path %></li>
+    </ul>
+
+    <div class="header-secondary-links">
+      <ul>
+      <% if signed_in? %>
+        <li>
+          <%= link_to t("application.header.logout"), session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t("application.header.registration"), new_registration_path %>
+        </li>
+        <li>
+          <%= link_to t("application.header.login"), login_path %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+</header>

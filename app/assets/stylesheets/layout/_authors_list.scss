@@ -1,0 +1,50 @@
+.authors-list {
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $authors-list-image-width: 150px;
+  $authors-list-color: $base-font-color;
+
+  border-bottom: 1px solid transparentize($authors-list-color, 0.9);
+  margin-bottom: $base-spacing;
+  padding-bottom: 1em;
+  width: 100%;
+
+  ul {
+    width: 100%;
+
+    li {
+      display: inline-flex;
+      margin: 0 10px;
+    }
+
+    > img {
+      border-radius: $base-border-radius;
+      height: auto;
+      max-width: none;
+      width: $authors-list-image-width;
+    }
+
+    a {
+      height: auto;
+      width: $authors-list-image-width;
+      display: block;
+    }
+
+    a:hover {
+      border-bottom: 3px solid $bookshelf-red-2;
+    }
+
+  }
+
+  h2 {
+    font-size: 1.4em;
+
+    a {
+      color: $bookshelf-red-2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}

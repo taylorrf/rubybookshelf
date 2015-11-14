@@ -20,6 +20,7 @@ en:
 
   books:
     index:
+      header: "Books"
       no_books_yet: You haven't added any books yet.
     filter:
       button: "Filter"
@@ -30,10 +31,12 @@ en:
     show:
       empty: This list is empty.
     index:
+      header: "Lists"
       no_lists_yet: You haven't added any lists yet.
 
   authors:
     index:
+      header: "Authors"
       no_authors_found: Sorry, but we don't have authors yet.
 
   registration:
@@ -49,11 +52,19 @@ en:
     success: "Welcome back, %{email}!"
     error: "Incorrect login information"
 
-  shared:
+  application:
+    title: "Ruby Bookshelf"
     header:
-      books: "Books"
-      lists: "Lists"
-      authors: "Authors"
       registration: "Create your free account"
       login: "Login"
       logout: "Log out"
+    menu:
+      books: "Books"
+      lists: "Lists"
+      authors: "Authors"
+    footer:
+      navigate: "Navigate"
+      follow_us: "Follow The Team"
+      legal: "Legal"
+      term: "Terms and Conditions"
+      privacy: "Privacy Policy"

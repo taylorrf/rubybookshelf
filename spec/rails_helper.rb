@@ -11,6 +11,7 @@ module Features
   # Extend this module in spec/support/features/*.rb
   include Formulaic::Dsl
   include LoginHelpers
+  include BookHelpers
 end
 
 RSpec.configure do |config|

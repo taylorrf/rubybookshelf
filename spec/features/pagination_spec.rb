@@ -27,10 +27,6 @@ RSpec.feature "Pagination", type: :feature do
     expect(page).to have_displayed_books(2)
   end
 
-  def have_displayed_books(count)
-    have_css("ul.books > li", count: count)
-  end
-
   def have_pagination_links
     have_css("nav.pagination")
   end

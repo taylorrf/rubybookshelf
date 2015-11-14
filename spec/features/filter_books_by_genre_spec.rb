@@ -19,7 +19,7 @@ RSpec.feature "Filter Books by Genre", type: :feature do
   end
 
   def book_list
-    page.all("ul.books li").map(&:text)
+    page.all(".booklist").map(&:text)
   end
 
   def fantasy

@@ -13,6 +13,5 @@ ruby:
   # config_file: .ruby-style.yml
   enabled: true
 scss:
-  # config_file: .scss-style.yml
-  enabled: true
+  config_file: .scss-style.yml
   ignore_file: .scss_ignore

@@ -1,0 +1,26 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">
+    <%= image_tag "logo_symbol.png", alt: t("application.title") %>
+  </div>
+  <div class="footer-links">
+    <ul>
+      <li><h3><%= t("application.footer.navigate") %></h3></li>
+      <li><%= link_to t("application.menu.books"), books_path %></li>
+      <li><%= link_to t("application.menu.lists"), lists_path %></li>
+      <li><%= link_to t("application.menu.authors"), authors_path %></li>
+    </ul>
+    <ul>
+      <li><h3><%= t("application.footer.follow_us") %></h3></li>
+      <li><%= link_to "Andy Waite", "http://www.twitter.com/andyw8", target: "_new" %></li>
+      <li><%= link_to "Pedro Moreira", "https://twitter.com/pedrosmmoreira", target: "_new" %></li>
+      <li><%= link_to "Tailor Fontela", "http://www.twitter.com/tailorfontela", target: "_new" %></li>
+    </ul>
+    <ul>
+      <li><h3><%= t("application.footer.legal") %></h3></li>
+      <li><%= link_to t("application.footer.term"), "javascript:void(0)" %></li>
+      <li><%= link_to t("application.footer.privacy"), "javascript:void(0)" %></li>
+    </ul>
+  </div>
+  <hr>
+  <p><i>"Keep reading books, but remember that a book is only a book, and you should learn to think for yourself."</i> - Maxim Gorky</p>
+</footer>

@@ -10,13 +10,16 @@ body {
   min-width: 320px;
 }
 
-
 .content {
   @include outer-container;
   max-width: $max-width;
   flex: 1;
   padding: 4em $side-padding 6em;
   width: 100%;
+
+  h1 {
+    font-size: 2.4em;
+  }
 
   ul, ol {
     padding: 0;
@@ -30,6 +33,25 @@ body {
     }
   }
 
+  .box {
+    background: lighten($light-gray, 11%);
+    border-radius: $base-border-radius;
+    box-shadow: inset 0 0 1px $light-gray, 0 2px 4px darken($base-background-color, 10%);
+    padding: 3em;
+  }
+
+  .authors {
+    a {
+      color: $base-font-color;
+      font-size: 1.8em;
+    }
+  }
+
+  .author {
+    p {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 @mixin dashboard-large {

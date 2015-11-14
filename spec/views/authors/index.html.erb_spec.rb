@@ -4,16 +4,19 @@ RSpec.describe "authors/index" do
   context "when there are authors to list" do
     it "lists the authors" do
       authors = [
-        build_stubbed(:author, name: "Martin Fowler"),
-        build_stubbed(:author, name: "Uncle Bob")
+        create(:author, name: "Martin Fowler"),
+        create(:author, name: "Uncle Bob")
       ]
+
+      create(:book, author: authors[1], cover: "http://amz.on/clean_code.jpg")
+      create(:book, author: authors[1], cover: "http://amz.on/clean_coders.jpg")
 
       render template: "authors/index", locals: { authors: authors }
 
-      within("ul.authors") do
-        expect(rendered).to have_css("li", text: "Martin Fowler")
-        expect(rendered).to have_css("li", text: "Uncle Bob")
-      end
+      expect(rendered).to have_css("h2", text: "Martin Fowler")
+      expect(rendered).to have_css("h2", text: "Uncle Bob")
+      expect(rendered).to have_css("img[src*='http://amz.on/clean_code.jpg']")
+      expect(rendered).to have_css("img[src*='http://amz.on/clean_coders.jpg']")
     end
   end
 

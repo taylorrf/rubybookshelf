@@ -7,11 +7,7 @@ RSpec.feature "List all books", type: :feature do
 
     visit books_path
 
-    expect(page).to have_book("The Fellowship of the Ring")
-    expect(page).to have_book("The Two Towers")
-  end
-
-  def have_book(title)
-    have_css("ul.books", text: title)
+    expect(page).to have_book_title("The Fellowship of the Ring")
+    expect(page).to have_book_title("The Two Towers")
   end
 end
