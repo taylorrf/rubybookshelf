@@ -42,4 +42,12 @@ RSpec.describe List do
       end
     end
   end
+
+  it "sets a slug when saved" do
+    record = create(:list, name: "Foo Bar")
+
+    result = record.slug
+
+    expect(result).to eq("foo-bar")
+  end
 end

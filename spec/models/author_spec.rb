@@ -19,4 +19,12 @@ RSpec.describe Author do
                                 "book #2", "book #3", "book #4")
     end
   end
+
+  it "sets a slug when saved" do
+    record = create(:author, name: "Foo Bar")
+
+    result = record.slug
+
+    expect(result).to eq("foo-bar")
+  end
 end

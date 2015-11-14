@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20151114145753) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
+    t.string   "slug"
   end
 
   add_index "authors", ["name"], name: "index_authors_on_name", using: :btree
+  add_index "authors", ["slug"], name: "index_authors_on_slug", unique: true, using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "title",       null: false
@@ -34,10 +36,12 @@ ActiveRecord::Schema.define(version: 20151114145753) do
     t.integer  "author_id"
     t.string   "cover"
     t.date     "released_on"
+    t.string   "slug"
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
   add_index "books", ["genre_id"], name: "index_books_on_genre_id", using: :btree
+  add_index "books", ["slug"], name: "index_books_on_slug", unique: true, using: :btree
   add_index "books", ["title"], name: "index_books_on_title", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -81,7 +85,10 @@ ActiveRecord::Schema.define(version: 20151114145753) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "lists", ["slug"], name: "index_lists_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

@@ -1,4 +1,7 @@
 class List < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :list_entries
   has_many :books, through: :list_entries
 

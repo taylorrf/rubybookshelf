@@ -84,4 +84,12 @@ RSpec.describe Book do
       end
     end
   end
+
+  it "sets a slug when saved" do
+    record = create(:book, title: "Foo Bar")
+
+    result = record.slug
+
+    expect(result).to eq("foo-bar")
+  end
 end

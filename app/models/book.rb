@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   SORT_CRITERIA_ADDED = "added"
 
   belongs_to :genre
