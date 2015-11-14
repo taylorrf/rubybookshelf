@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.describe "books/show" do
+RSpec.describe "books/_details" do
   context "when the book has a summary" do
     it "displays the summary" do
       book = build_stubbed(:book, summary: "The first book in the series")
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to have_css("p.summary",
                                    text: "The first book in the series")
@@ -16,7 +16,7 @@ RSpec.describe "books/show" do
     it "doesn't display a summary" do
       book = build_stubbed(:book)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to_not have_css("p.summary")
     end
@@ -26,7 +26,7 @@ RSpec.describe "books/show" do
     it "displays the cover sample" do
       book = build_stubbed(:book, cover: "book_cover.jpg")
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to have_cover("book_cover.jpg")
     end
@@ -36,7 +36,7 @@ RSpec.describe "books/show" do
     it "doesn't display the cover sample" do
       book = build_stubbed(:book)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to have_cover("default_cover.jpg")
     end
@@ -47,7 +47,7 @@ RSpec.describe "books/show" do
       author = build_stubbed(:author, name: "John")
       book = build_stubbed(:book, author: author)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to have_css("h3", "John")
     end
@@ -57,7 +57,7 @@ RSpec.describe "books/show" do
     it "doesn't display author name" do
       book = build_stubbed(:book)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to_not have_css("h3", "John")
     end

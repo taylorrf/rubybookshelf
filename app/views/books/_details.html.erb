@@ -1,0 +1,17 @@
+<div class="book">
+  <div class="book-image">
+    <%= image_tag(book.sample_cover) %>
+  </div>
+  <div class="book-content">
+    <h1><%= book.title %></h1>
+    <% if book.author.present? %>
+      <h3>by <%= link_to book.author.name, book.author %></h3>
+    <% end %>
+
+    <% if book.has_summary? %>
+      <% # doesn't yet handle paragraphs, line breaks yet %>
+      <p class="summary"><%= book.summary %></p>
+    <% end %>
+    <p class="released-on"><%= l(book.released_on, format: :long) %></p>
+  </div>
+</div>
