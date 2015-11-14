@@ -1,9 +1,9 @@
 <div class="box">
-  <div class="booklist">
-    <div class="booklist-image">
+  <div class="book">
+    <div class="book-image">
       <%= image_tag(book.sample_cover) %>
     </div>
-    <div class="booklist-content">
+    <div class="book-content">
       <h1><%= book.title %></h1>
       <% if book.author.present? %>
         <h3>by <%= link_to book.author.name, book.author %></h3>

@@ -1,9 +1,9 @@
 <% books.each do |book|  %>
-  <div class="booklist">
-    <div class="booklist-image">
+  <div class="book">
+    <div class="book-image">
       <%= link_to image_tag(book.sample_cover), book %>
     </div>
-    <div class="booklist-content">
+    <div class="book-content">
       <h1><%= link_to book.title, book %></h1>
       <p><%= book.summary %></p>
     </div>

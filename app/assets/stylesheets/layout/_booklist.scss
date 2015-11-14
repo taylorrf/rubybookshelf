@@ -1,46 +1,46 @@
-.booklist {
+.book {
   $base-border-radius: 3px !default;
   $base-spacing: 1.5em !default;
   $action-color: #477dca !default;
   $dark-gray: #333 !default;
   $base-font-color: $dark-gray !default;
-  $booklist-gutter: 1.4em;
-  $booklist-image-width: 150px;
-  $booklist-color: $base-font-color;
-  $booklist-image-vert-alignment: top;
+  $book-gutter: 1.4em;
+  $book-image-width: 150px;
+  $book-color: $base-font-color;
+  $book-image-vert-alignment: top;
 
-  border-bottom: 1px solid transparentize($booklist-color, 0.9);
+  border-bottom: 1px solid transparentize($book-color, 0.9);
   display: table;
   margin-bottom: $base-spacing;
   padding-bottom: 1em;
   width: 100%;
 
-  .booklist-image,
-  .booklist-content {
+  .book-image,
+  .book-content {
     display: table-cell;
-    vertical-align: $booklist-image-vert-alignment;
+    vertical-align: $book-image-vert-alignment;
   }
 
-  .booklist-image {
-    padding-right: $booklist-gutter;
+  .book-image {
+    padding-right: $book-gutter;
 
     > img {
       border-radius: $base-border-radius;
       display: block;
       height: auto;
       max-width: none;
-      width: $booklist-image-width;
+      width: $book-image-width;
     }
 
     a {
       display: block;
       height: auto;
       max-width: none;
-      width: $booklist-image-width;
+      width: $book-image-width;
     }
   }
 
-  .booklist-content {
+  .book-content {
     width: 100%;
 
     a {
