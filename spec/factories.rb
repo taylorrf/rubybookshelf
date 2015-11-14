@@ -5,6 +5,7 @@ FactoryGirl.define do
 
   factory :book do
     sequence(:title) { |n| "Default Book Title #{n}" }
+    released_on Time.zone.today
 
     trait :no_genre do
       genre nil

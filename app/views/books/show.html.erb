@@ -13,6 +13,7 @@
         <% # doesn't yet handle paragraphs, line breaks yet %>
         <p class="summary"><%= book.summary %></p>
       <% end %>
+      <p class="released-on"><%= l(book.released_on, format: :long) %></p>
     </div>
   </div>
 

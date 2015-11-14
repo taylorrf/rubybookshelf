@@ -13,10 +13,23 @@ if Rails.env.development? || Rails.env.test?
       programming = create(:genre, name: "Programming")
       create(:genre, name: "Science")
 
-      fellowship = create(:book, title: "The Fellowship of the Ring", genre: fantasy, author: jrr, cover: "http://ecx.images-amazon.com/images/I/51wIJN44zhL.jpg",
-             summary: "The dark, fearsome Ringwraiths are searching for a Hobbit. Frodo Baggins knows that they are seeking him and the Ring he bears—the Ring of Power that will enable evil Sauron to destroy all that is good in Middle-earth. Now it is up to Frodo and his faithful servant, Sam, with a small band of companions, to carry the Ring to the one place it can be destroyed: Mount Doom, in the very center of Sauron’s realm.")
-      two_towers = create(:book, title: "The Two Towers", genre: fantasy, author: jrr, cover: "http://ecx.images-amazon.com/images/I/51HUqZm3JTL.jpg", summary: "The Fellowship is scattered. Some are bracing hopelessly for war against the ancient evil of Sauron. Some are contending with the treachery of the wizard Saruman. Only Frodo and Sam are left to take the accursed One Ring, ruler of all the Rings of Power, to be destroyed in Mordor, the dark realm where Sauron is supreme. Their guide is Gollum, deceitful and lust-filled, slave to the corruption of the Ring.")
-      create(:book, title: "Programming Ruby", genre: programming, author: dave, cover: "http://ecx.images-amazon.com/images/I/41gtODXuRlL.jpg", summary: "Ruby, a new, object-oriented scripting language, has won over thousands of Perl and Python programmers in Japan -- and it's now launching worldwide. This is the world's first English-language developer's guide to Ruby. Written by the two leading Ruby developers, Programming Ruby demonstrates Ruby's compelling advantages, and serves as a start-to-finish tutorial and reference for every developer.")
+      fellowship = create(:book,
+                          title: "The Fellowship of the Ring",
+                          released_on: "1954-07-29",
+                          genre: fantasy, author: jrr, cover: "http://ecx.images-amazon.com/images/I/51wIJN44zhL.jpg",
+                          summary: "The dark, fearsome Ringwraiths are searching for a Hobbit. Frodo Baggins knows that they are seeking him and the Ring he bears—the Ring of Power that will enable evil Sauron to destroy all that is good in Middle-earth. Now it is up to Frodo and his faithful servant, Sam, with a small band of companions, to carry the Ring to the one place it can be destroyed: Mount Doom, in the very center of Sauron’s realm.")
+      two_towers = create(:book,
+                          title: "The Two Towers",
+                          released_on: "1954-11-11",
+                          genre: fantasy,
+                          author: jrr,
+                          cover: "http://ecx.images-amazon.com/images/I/51HUqZm3JTL.jpg", summary: "The Fellowship is scattered. Some are bracing hopelessly for war against the ancient evil of Sauron. Some are contending with the treachery of the wizard Saruman. Only Frodo and Sam are left to take the accursed One Ring, ruler of all the Rings of Power, to be destroyed in Mordor, the dark realm where Sauron is supreme. Their guide is Gollum, deceitful and lust-filled, slave to the corruption of the Ring.")
+      create(:book,
+             title: "Programming Ruby",
+             genre: programming,
+             author: dave,
+             cover: "http://ecx.images-amazon.com/images/I/41gtODXuRlL.jpg",
+             summary: "Ruby, a new, object-oriented scripting language, has won over thousands of Perl and Python programmers in Japan -- and it's now launching worldwide. This is the world's first English-language developer's guide to Ruby. Written by the two leading Ruby developers, Programming Ruby demonstrates Ruby's compelling advantages, and serves as a start-to-finish tutorial and reference for every developer.")
       create(:book, title: "Oxford English Dictionary")
 
 

@@ -63,6 +63,15 @@ RSpec.describe "books/show" do
     end
   end
 
+  it "displays the release date" do
+    release_date = Date.new(2015, 4, 13)
+    book = build_stubbed(:book, released_on: release_date)
+
+    render template: "books/show", locals: { book: book }
+
+    expect(rendered).to have_css(".released-on", text: "April 13, 2015")
+  end
+
   def have_cover(image)
     have_css("img[src*='#{image}']")
   end
