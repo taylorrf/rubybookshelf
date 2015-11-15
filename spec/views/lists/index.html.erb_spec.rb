@@ -7,7 +7,7 @@ RSpec.describe "lists/index" do
 
       render template: "lists/index", locals: { lists: lists }
 
-      expect(rendered).to have_css(".default-list h2")
+      expect(rendered).to have_css("ul.lists h2")
     end
   end
 

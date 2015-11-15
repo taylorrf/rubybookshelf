@@ -2,14 +2,12 @@
 
 <% if authors.any? %>
   <% authors.each do |author| %>
-  <div class="default-list">
-    <h2><%= link_to author.name, author %></h2>
-    <ul>
-      <% author.popular_books.each do |book| %>
-        <li><%= link_to image_tag(book.sample_cover), book %></li>
-      <% end %>
-    </ul>
-  </div>
+  <h2><%= link_to author.name, author %></h2>
+  <ul class="books">
+    <% author.popular_books.each do |book| %>
+      <li><%= link_to image_tag(book.sample_cover), book %></li>
+    <% end %>
+  </ul>
   <% end %>
 <% else %>
   <h1><%= t(".no_authors_found") %></h1>

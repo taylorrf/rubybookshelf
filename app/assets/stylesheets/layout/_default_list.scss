@@ -1,15 +1,16 @@
-.default-list {
+.authors-index,
+.lists-index {
   $base-border-radius: 3px !default;
   $base-spacing: 1.5em !default;
-  $default-list-image-width: 150px;
-  $default-list-color: $base-font-color;
+  $inline-books-image-width: 150px;
+  $inline-books-color: $base-font-color;
 
-  border-bottom: 1px solid transparentize($default-list-color, 0.9);
+  border-bottom: 1px solid transparentize($inline-books-color, 0.9);
   margin-bottom: $base-spacing;
   padding-bottom: 1em;
   width: 100%;
 
-  ul {
+  ul.books {
     width: 100%;
 
     li {
@@ -21,12 +22,12 @@
       border-radius: $base-border-radius;
       height: auto;
       max-width: none;
-      width: $default-list-image-width;
+      width: $inline-books-image-width;
     }
 
     a {
       height: auto;
-      width: $default-list-image-width;
+      width: $inline-books-image-width;
       display: block;
       border-bottom: 3px solid $white;
     }
