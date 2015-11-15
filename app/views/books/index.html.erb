@@ -1,10 +1,11 @@
 <h1><%= t(".header")%></h1>
 
-<%= render "books/filter", filter: filter %>
-
 <% if books.any? %>
-  <%= link_to(t("sorting.by_title"), sort_path("title")) %> |
-  <%= link_to(t("sorting.newest_first"), sort_path(Book::SORT_CRITERIA_RELEASE_DATE)) %>
+  <div class="filters">
+    <%= render "books/filter", filter: filter %>
+    <%= link_to(t("sorting.by_title"), sort_path("title")) %> |
+    <%= link_to(t("sorting.newest_first"), sort_path(Book::SORT_CRITERIA_RELEASE_DATE)) %>
+  </div>
 
   <%= render "books/books", books: books %>
 

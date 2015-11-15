@@ -48,6 +48,26 @@ body {
 
 }
 
+.filters {
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  padding-bottom: 30px;
+
+  a {
+    padding: 10px;
+  }
+
+  .new_filter {
+    width: 20%;
+
+    select {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
 .registrations .box,
 .sessions .box {
   margin: 0 auto;
