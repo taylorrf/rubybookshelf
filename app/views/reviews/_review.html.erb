@@ -1,10 +1,10 @@
 <div class="comment">
   <div class="comment-image">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+    <%= gravatar_image_tag(review.reviewer_email, :alt => review.reviewer_email) %>
   </div>
   <div class="comment-content">
     <h1><%= review.reviewer_email %></h1>
     <%= simple_format review.body %>
-    <p class="comment-detail"><%= time_ago_in_words review.created_at %> ago</p>
+    <span><%= time_ago_in_words review.created_at %> ago</span>
   </div>
 </div>

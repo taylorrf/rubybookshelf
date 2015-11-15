@@ -110,6 +110,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gravatar_image_tag (1.2.0)
     hashdiff (0.2.2)
     high_voltage (2.4.0)
     highline (1.7.8)
@@ -288,6 +289,7 @@ DEPENDENCIES
   flutie
   formulaic
   friendly_id
+  gravatar_image_tag (~> 1.2)
   high_voltage
   i18n-tasks
   jquery-rails

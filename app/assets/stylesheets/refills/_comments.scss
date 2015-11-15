@@ -5,7 +5,7 @@
   $dark-gray: #333 !default;
   $base-font-color: $dark-gray !default;
   $comment-gutter: 1.4em;
-  $comment-image-padding: 0.7em;
+  $comment-image-padding: 0.1em;
   $comment-image-width: 4em;
   $comment-color: $base-font-color;
   $comment-background: lighten($action-color, 15%);
@@ -28,12 +28,11 @@
     padding-right: $comment-gutter;
 
     > img {
-      background: $comment-background;
       border-radius: $base-border-radius;
       display: block;
       height: auto;
       max-width: none;
-      padding: $comment-image-padding;
+      padding: 0;
       width: $comment-image-width;
     }
 
@@ -54,12 +53,12 @@
     p {
       line-height: 1.5em;
       margin-bottom: 0.5em;
+    }
 
-      .comment-detail {
-        color: $comment-detail-color;
-        font-size: 0.9em;
-        font-style: italic;
-      }
+    span {
+      color: $comment-detail-color;
+      font-size: 0.8em;
+      font-style: italic;
     }
   }
 }
