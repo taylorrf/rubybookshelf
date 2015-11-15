@@ -10,7 +10,7 @@
 
     <% if book.has_summary? %>
       <% # doesn't yet handle paragraphs, line breaks yet %>
-      <p class="summary"><%= book.summary %></p>
+      <%= simple_format book.summary, class: "summary" %>
     <% end %>
 
     <% if book.has_release_date? %>
