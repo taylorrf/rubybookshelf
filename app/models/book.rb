@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  CannotCalculateAverageRatingError = Class.new(RuntimeError)
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -34,5 +36,18 @@ class Book < ActiveRecord::Base
 
   def self.alphabetically
     order("lower(title)")
+  end
+
+  # TODO: extract this so as to minimize behaviour within the AR model
+  def average_rating
+    if reviews.any?
+      reviews.with_ratings.average(:rating)
+    else
+      fail CannotCalculateAverageRatingError
+    end
+  end
+
+  def has_average_rating?
+    reviews.with_ratings.any?
   end
 end

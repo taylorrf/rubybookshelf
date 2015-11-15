@@ -110,4 +110,42 @@ RSpec.describe Book do
 
     expect(result).to eq("foo-bar")
   end
+
+  describe "#average_rating" do
+    context "when there are no reviews" do
+      it "raises an exception" do
+        book = create(:book, reviews: [])
+
+        expect do
+          book.average_rating
+        end.to raise_error(Book::CannotCalculateAverageRatingError)
+      end
+    end
+
+    context "with only one reviews" do
+      it "returns the rating from that review" do
+        review = create(:review, rating: 3)
+        book = create(:book, reviews: [review])
+
+        result = book.average_rating
+
+        expect(result).to eq(3)
+      end
+    end
+
+    context "with multiple reviews" do
+      it "returns the average rating, ignoring reviews without a rating" do
+        reviews = [
+          create(:review, rating: 3),
+          create(:review, rating: 4),
+          create(:review, rating: nil)
+        ]
+        book = create(:book, reviews: reviews)
+
+        result = book.average_rating
+
+        expect(result).to eq(3.5)
+      end
+    end
+  end
 end

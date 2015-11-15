@@ -5,4 +5,8 @@ class Review < ActiveRecord::Base
   validates :body, presence: true
 
   delegate :email, to: :reviewer, prefix: true
+
+  def self.with_ratings
+    where.not(rating: nil)
+  end
 end

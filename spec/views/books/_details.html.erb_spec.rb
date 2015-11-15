@@ -87,6 +87,29 @@ RSpec.describe "books/_details" do
     end
   end
 
+  context "when the book has an average rating" do
+    it "displays the average rating" do
+      book = build_stubbed(:book)
+      allow(book).to receive(:has_average_rating?).and_return(true)
+      allow(book).to receive(:average_rating).and_return(3)
+
+      render template: "books/_details", locals: { book: book }
+
+      expect(rendered).to have_css(".average-rating", text: 3)
+    end
+  end
+
+  context "when the book has no average rating" do
+    it "displays no rating" do
+      book = build_stubbed(:book)
+      allow(book).to receive(:has_average_rating?).and_return(false)
+
+      render template: "books/_details", locals: { book: book }
+
+      expect(rendered).to_not have_css(".average-rating")
+    end
+  end
+
   def have_cover(image)
     have_css("img[src*='#{image}']")
   end

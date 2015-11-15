@@ -16,5 +16,11 @@
     <% if book.has_release_date? %>
       <p class="released-on"><%= l(book.released_on, format: :long) %></p>
     <% end %>
+
+    <% if book.has_average_rating? %>
+      <p>Average rating:
+        <span class="average-rating"><%= book.average_rating %></span>
+      </p>
+    <% end %>
   </div>
 </div>
