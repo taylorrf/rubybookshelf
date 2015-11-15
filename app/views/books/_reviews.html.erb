@@ -1,8 +1,9 @@
-<% # Markup for users Review feature %>
 <div class="comment">
   <h2>Reviews</h2>
 </div>
 <% if review_policy.authorized_for_review? %>
   <%= render partial: "reviews/form", locals: { book: book, review: Review.new } %>
+<% else %>
+  <%= link_to t("books.reviews.create_account"), new_registration_path %>
 <% end %>
 <%= render book.reviews %>

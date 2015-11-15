@@ -24,6 +24,8 @@ en:
       no_books_yet: You haven't added any books yet.
     filter:
       button: "Filter"
+    reviews:
+      create_account: "Create an account to review this book."
 
   lists:
     list:
