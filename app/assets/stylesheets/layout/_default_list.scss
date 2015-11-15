@@ -1,20 +1,26 @@
 .authors-index,
 .lists-index {
   $base-border-radius: 3px !default;
-  $base-spacing: 1.5em !default;
+  $base-spacing: 1em !default;
   $inline-books-image-width: 150px;
   $inline-books-color: $base-font-color;
 
-  border-bottom: 1px solid transparentize($inline-books-color, 0.9);
-  margin-bottom: $base-spacing;
-  padding-bottom: 1em;
-  width: 100%;
+  .authors,
+  .lists {
+    width: 100%;
+
+    li {
+      border-bottom: 1px solid transparentize($inline-books-color, 0.9);
+      padding-bottom: 0.5em;
+    }
+  }
 
   ul.books {
     width: 100%;
 
     li {
       display: inline-flex;
+      border-bottom: 0;
       margin: 0 10px;
     }
 

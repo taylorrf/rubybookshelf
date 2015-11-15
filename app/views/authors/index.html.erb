@@ -1,14 +1,18 @@
 <h1><%= t(".header")%></h1>
 
 <% if authors.any? %>
+  <ul class="authors">
   <% authors.each do |author| %>
-  <h2><%= link_to author.name, author %></h2>
-  <ul class="books">
-    <% author.popular_books.each do |book| %>
-      <li><%= link_to image_tag(book.sample_cover), book %></li>
-    <% end %>
-  </ul>
+    <li>
+      <h2><%= link_to author.name, author %></h2>
+      <ul class="books">
+        <% author.popular_books.each do |book| %>
+          <li><%= link_to image_tag(book.sample_cover), book %></li>
+        <% end %>
+      </ul>
+    </li>
   <% end %>
+  </ul>
 <% else %>
   <h1><%= t(".no_authors_found") %></h1>
 <% end%>
