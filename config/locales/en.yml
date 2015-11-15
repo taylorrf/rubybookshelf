@@ -27,7 +27,7 @@ en:
 
   lists:
     list:
-      empty: We don't have any curated list yet.
+      empty: We haven't added any book yet.
     show:
       empty: This list is empty.
     index:

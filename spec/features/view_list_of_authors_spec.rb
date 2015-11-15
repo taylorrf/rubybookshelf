@@ -22,6 +22,6 @@ RSpec.feature "View list of Authors", type: :feature do
   end
 
   def have_author(name)
-    have_css(".authors-list h2", text: name)
+    have_css(".default-list h2", text: name)
   end
 end
