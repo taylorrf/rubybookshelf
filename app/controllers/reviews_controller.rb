@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   def review_params
     params.
       require(:review).
-      permit(:body).
+      permit(:body, :rating).
       merge(reviewer: current_user, book: book)
   end
 

@@ -17,10 +17,12 @@ RSpec.feature "User writes a review", type: :feature do
     click_link "The Shades: a history"
     fill_in t("reviews.form.body"),
             with: "They missed the Dragon's Den. Unbelievable"
+    select "4", from: "Your rating"
     click_on t("reviews.form.submit")
 
     expect(page).to have_content user.email
     expect(page).to have_content "They missed the Dragon's Den. Unbelievable"
+    expect(page).to have_content "Rating: 4"
   end
 
   scenario "if he has written a review for the book already" do

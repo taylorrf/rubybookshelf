@@ -55,6 +55,7 @@ en:
   reviews:
     form:
       body: "Your review"
+      rating: "Your rating"
       submit: "Submit review"
       submiting: "Submitting..."
     create:

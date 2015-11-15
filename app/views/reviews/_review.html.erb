@@ -5,6 +5,9 @@
   <div class="comment-content">
     <h1><%= review.reviewer_email %></h1>
     <%= simple_format review.body %>
-    <span><%= time_ago_in_words review.created_at %> ago</span>
+    <% if review.rating %>
+      <div>Rating: <span class="rating"><%= review.rating %></span></div>
+    <% end %>
+    <span class="timestamp"><%= time_ago_in_words review.created_at %> ago</span>
   </div>
 </div>
