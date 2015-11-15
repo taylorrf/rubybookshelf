@@ -63,13 +63,25 @@ RSpec.describe "books/_details" do
     end
   end
 
-  it "displays the release date" do
-    release_date = Date.new(2015, 4, 13)
-    book = build_stubbed(:book, released_on: release_date)
+  context "when the book has a release date" do
+    it "displays the release date" do
+      release_date = Date.new(2015, 4, 13)
+      book = build_stubbed(:book, released_on: release_date)
 
-    render template: "books/show", locals: { book: book }
+      render template: "books/show", locals: { book: book }
 
-    expect(rendered).to have_css(".released-on", text: "April 13, 2015")
+      expect(rendered).to have_css(".released-on", text: "April 13, 2015")
+    end
+  end
+
+  context "when the book has no release date" do
+    it "doesn't display the release date" do
+      book = build_stubbed(:book, released_on: nil)
+
+      render template: "books/show", locals: { book: book }
+
+      expect(rendered).to_not have_css(".released-on")
+    end
   end
 
   def have_cover(image)

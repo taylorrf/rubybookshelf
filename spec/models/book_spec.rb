@@ -29,6 +29,24 @@ RSpec.describe Book do
     end
   end
 
+  describe "#has_release_date?" do
+    it "is true if the book has a release_date" do
+      book = build_stubbed(:book, released_on: Time.zone.today)
+
+      result = book.has_release_date?
+
+      expect(result).to be(true)
+    end
+
+    it "is false if the book has no release date" do
+      book = build_stubbed(:book, released_on: nil)
+
+      result = book.has_release_date?
+
+      expect(result).to be(false)
+    end
+  end
+
   describe "#sample_cover" do
     it "has a cover image" do
       book = build_stubbed(:book, cover: "book_cover.jpg")

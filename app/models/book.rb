@@ -11,6 +11,10 @@ class Book < ActiveRecord::Base
     summary.present?
   end
 
+  def has_release_date?
+    released_on.present?
+  end
+
   def sample_cover
     (cover || "default_cover.jpg")
   end
