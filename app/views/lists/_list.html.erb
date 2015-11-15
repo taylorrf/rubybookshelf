@@ -1,12 +1,12 @@
-<li class="list">
+<div class="default-list">
   <h2><%= link_to list.name, list %></h2>
   <% if list.empty? %>
-    <%= t(".empty") %>
+    <p><%= t(".empty") %></p>
   <% else %>
-    <ul class="books">
+    <ul>
       <% list.highlights(maximum: 5).each do |book| %>
-        <li class="book"><%= link_to book.title %></li>
+        <li><%= link_to image_tag(book.sample_cover), book %></li>
       <% end %>
     </ul>
   <% end %>
-</li>
+</div>

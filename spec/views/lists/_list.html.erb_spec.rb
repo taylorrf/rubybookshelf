@@ -7,7 +7,7 @@ RSpec.describe "lists/_list" do
 
       render template: "lists/_list", locals: { list: list }
 
-      expect(rendered).to have_css("li", text: t(".list.empty"))
+      expect(rendered).to have_css("p", text: t(".list.empty"))
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe "lists/_list" do
 
       render template: "lists/_list", locals: { list: list }
 
-      expect(rendered).to have_css("ul.books li")
+      expect(rendered).to have_css(".default-list ul li")
     end
   end
 end
