@@ -3,7 +3,7 @@
 </div>
 <% if review_policy.authorized_for_review? %>
   <%= render partial: "reviews/form", locals: { book: book, review: Review.new } %>
-<% else %>
+<% elsif logged_out? %>
   <%= link_to t("books.reviews.create_account"), new_registration_path %>
 <% end %>
 <%= render book.reviews %>
