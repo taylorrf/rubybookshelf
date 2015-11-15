@@ -48,7 +48,7 @@ en:
     register_disable: "Creating account..."
     success: "Thanks, %{email}! Welcome aboard"
     already_have_account: "Already have an account?"
-    success: "Thanks, %{email}! You can now log in"
+    success: "Thanks, %{email}! You are now logged in"
 
   session:
     success: "Welcome, %{email}!"
