@@ -25,6 +25,10 @@ FactoryGirl.define do
     list
   end
 
+  factory :review do
+    body "A review"
+  end
+
   factory :user do
     sequence(:email) { |n| "user_#{n}@example.com" }
     password "examplepassword"

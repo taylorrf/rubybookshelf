@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       resource :filter, only: :show, as: :book_filter, controller: "books/filter"
     end
+    resources :reviews, only: [:create]
   end
 
   resources :lists, only: [:index, :show]

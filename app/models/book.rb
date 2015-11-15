@@ -6,6 +6,7 @@ class Book < ActiveRecord::Base
 
   belongs_to :genre
   belongs_to :author
+  has_many :reviews
 
   def has_summary?
     summary.present?

@@ -2,7 +2,11 @@ module Authentication
   extend ActiveSupport::Concern
 
   included do
-    helper_method :current_user, :signed_in?
+    helper_method :authorize, :current_user, :signed_in?
+  end
+
+  def authorize
+    redirect_to login_path unless current_user
   end
 
   def current_user

@@ -50,6 +50,14 @@ en:
     already_have_account: "Already have an account?"
     success: "Thanks, %{email}! You are now logged in"
 
+  reviews:
+    form:
+      body: "Your review"
+      submit: "Submit review"
+      submiting: "Submitting..."
+    create:
+      notice: "Great success! Your review is submitted"
+
   session:
     success: "Welcome, %{email}!"
     error: "Incorrect login information"

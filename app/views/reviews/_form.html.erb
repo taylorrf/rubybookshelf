@@ -1,0 +1,6 @@
+<div>
+  <%= simple_form_for [book, review] do |form_builder| %>
+    <%= form_builder.input :body, label: t("reviews.form.body"), required: true %>
+    <%= form_builder.submit t("reviews.form.submit"), disabled_with: t("reviews.form.submiting") %>
+  <% end %>
+</div>

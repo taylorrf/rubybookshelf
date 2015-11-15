@@ -2,28 +2,7 @@
 <div class="comment">
   <h2>Reviews</h2>
 </div>
-
-<% [*1..3].sample.times do %>
-<div class="comment">
-  <div class="comment-image">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-  </div>
-  <div class="comment-content">
-    <h1>Samuel L. Jackson</h1>
-    <p>Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.</p>
-    <p class="comment-detail"><%= Time.current %></p>
-  </div>
-</div>
-
-<div class="comment">
-  <div class="comment-image">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="Logo image">
-  </div>
-  <div class="comment-content">
-    <h1>David H. Hanson</h1>
-    <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
-    <p class="comment-detail"><%= Time.current %></p>
-  </div>
-</div>
+<% if review_policy.authorized_for_review? %>
+  <%= render partial: "reviews/form", locals: { book: book, review: Review.new } %>
 <% end %>
-<% # Markup for users Review feature %>
+<%= render book.reviews %>

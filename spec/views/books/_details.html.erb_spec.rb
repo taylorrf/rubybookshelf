@@ -71,7 +71,7 @@ RSpec.describe "books/_details" do
       release_date = Date.new(2015, 4, 13)
       book = build_stubbed(:book, released_on: release_date)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to have_css(".released-on", text: "April 13, 2015")
     end
@@ -81,7 +81,7 @@ RSpec.describe "books/_details" do
     it "doesn't display the release date" do
       book = build_stubbed(:book, released_on: nil)
 
-      render template: "books/show", locals: { book: book }
+      render template: "books/_details", locals: { book: book }
 
       expect(rendered).to_not have_css(".released-on")
     end
