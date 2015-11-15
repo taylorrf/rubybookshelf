@@ -7,6 +7,7 @@ class RegistrationsController < ApplicationController
     user = User.new user_params
 
     if user.save
+      session.update user_id: user.id
       redirect_to root_url, notice: t("registration.success", email: user.email)
     else
       render :new, locals: { registration: user }

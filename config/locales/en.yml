@@ -46,7 +46,7 @@ en:
     login_disable: "Logging in..."
     register: "Create account"
     register_disable: "Creating account..."
-    success: "Thanks, %{email}! You can now log in"
+    success: "Thanks, %{email}! Welcome aboard"
 
   session:
     success: "Welcome, %{email}!"

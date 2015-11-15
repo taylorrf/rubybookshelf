@@ -17,6 +17,14 @@ RSpec.describe RegistrationsController do
 
       expect(response).to render_template :new
     end
+
+    it "signs the user in" do
+      user = stub_user_creation_with method: :save, return_value: true
+
+      post :create, registration: { email: "" }
+
+      expect(session[:user_id]).to eq(user.id)
+    end
   end
 
   def stub_user_creation_with(method:, return_value:)
