@@ -45,6 +45,18 @@ body {
       margin-bottom: 40px;
     }
   }
+
+}
+
+.registrations .box,
+.sessions .box {
+  margin: 0 auto;
+  width: 40%;
+
+  input[type="submit"] {
+    margin: 10px 0 20px;
+    width: 100%;
+  }
 }
 
 @mixin dashboard-large {

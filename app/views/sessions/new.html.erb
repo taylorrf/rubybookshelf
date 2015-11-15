@@ -1,7 +1,9 @@
-<%= simple_form_for :session, url: session_path do |form_builder| %>
-  <%= render partial: "shared/registration_form_fields",
-    locals: { form_builder: form_builder } %>
+<div class="box">
+  <%= simple_form_for :session, url: session_path do |form_builder| %>
+    <%= render partial: "shared/registration_form_fields",
+      locals: { form_builder: form_builder } %>
 
-  <%= form_builder.submit t("registration.login"),
-    disable_with: t("registration.login_disable") %>
-<% end %>
+    <%= form_builder.submit t("registration.login"),
+      disable_with: t("registration.login_disable") %>
+  <% end %>
+</div>

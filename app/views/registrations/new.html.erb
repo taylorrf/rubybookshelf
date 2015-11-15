@@ -1,7 +1,11 @@
-<%= simple_form_for registration, as: :registration, url: registration_path do |form_builder| %>
-  <%= render partial: "shared/registration_form_fields",
-    locals: { form_builder: form_builder } %>
+<div class="box">
+  <%= simple_form_for registration, as: :registration, url: registration_path do |form_builder| %>
+    <%= render partial: "shared/registration_form_fields",
+      locals: { form_builder: form_builder } %>
 
-  <%= form_builder.submit t("registration.register"),
-    disable_with: t("registration.register_disable") %>
-<% end %>
+    <%= form_builder.submit t("registration.register"),
+      disable_with: t("registration.register_disable") %>
+  <% end %>
+
+  <%= link_to t("registration.already_have_account"), login_path %>
+</div>
