@@ -26,6 +26,6 @@ RSpec.describe "Shows all of the lists of books", type: :feature do
   end
 
   def have_list(name)
-    have_css(".default-list h2", text: name)
+    have_css(".lists-index h2", text: name)
   end
 end
