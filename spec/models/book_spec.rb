@@ -72,7 +72,7 @@ RSpec.describe Book do
         newest = create(:book, released_on: 1.day.ago)
         middle = create(:book, released_on: 1.week.ago)
 
-        result = Book.sort_by(Book::SORT_CRITERIA_ADDED)
+        result = Book.sort_by(Book::SORT_CRITERIA_RELEASE_DATE)
 
         expect(result).to eq([newest, middle, oldest])
       end

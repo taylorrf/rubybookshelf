@@ -13,9 +13,9 @@ RSpec.describe BooksHelper, type: :helper do
     it "retains the current sort order" do
       stub_params
 
-      result = helper.sort_path(Book::SORT_CRITERIA_ADDED)
+      result = helper.sort_path(Book::SORT_CRITERIA_RELEASE_DATE)
 
-      expect(result).to eq(books_path(sort: Book::SORT_CRITERIA_ADDED))
+      expect(result).to eq(books_path(sort: Book::SORT_CRITERIA_RELEASE_DATE))
     end
 
     it "retains the current page number" do

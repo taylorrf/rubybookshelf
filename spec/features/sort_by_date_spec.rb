@@ -7,7 +7,7 @@ RSpec.feature "Sort by date", type: :feature do
     create(:book, released_on: 1.week.ago, title: "The Two Towers")
 
     visit books_path
-    click_link "Sort by Date Added"
+    click_link t("sorting.newest_first")
 
     expect(book_list).to eq([
       "The Fellowship of the Ring",

@@ -3,8 +3,8 @@
 <%= render "books/filter", filter: filter %>
 
 <% if books.any? %>
-  <%= link_to("Sort by Title", sort_path("title")) %> |
-  <%= link_to("Sort by Date Added", sort_path(Book::SORT_CRITERIA_ADDED)) %>
+  <%= link_to(t("sorting.by_title"), sort_path("title")) %> |
+  <%= link_to(t("sorting.newest_first"), sort_path(Book::SORT_CRITERIA_RELEASE_DATE)) %>
 
   <%= render "books/books", books: books %>
 

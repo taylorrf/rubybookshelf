@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  SORT_CRITERIA_ADDED = "added"
+  SORT_CRITERIA_RELEASE_DATE = "release_date"
 
   belongs_to :genre
   belongs_to :author
@@ -20,7 +20,7 @@ class Book < ActiveRecord::Base
   end
 
   def self.sort_by(criteria)
-    if criteria == SORT_CRITERIA_ADDED
+    if criteria == SORT_CRITERIA_RELEASE_DATE
       newest_first
     else
       alphabetically

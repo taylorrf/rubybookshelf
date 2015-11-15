@@ -70,3 +70,6 @@ en:
       legal: "Legal"
       term: "Terms and Conditions"
       privacy: "Privacy Policy"
+  sorting:
+    by_title: "By title"
+    newest_first: "Sort by newest first"
