@@ -13,6 +13,10 @@ class BookFacade
     )
   end
 
+  def new_review
+    Review.new
+  end
+
   private
 
   attr_reader :current_user

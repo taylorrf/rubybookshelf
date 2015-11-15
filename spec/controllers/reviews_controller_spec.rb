@@ -5,7 +5,7 @@ RSpec.describe ReviewsController, type: :controller do
     context "when the review is valid" do
       it "redirects to the book path" do
         book = stub_book
-        stub_review
+        stub_save_review(success: true)
 
         post :create, book_id: book.id, review: { body: "" }
 
@@ -14,7 +14,7 @@ RSpec.describe ReviewsController, type: :controller do
 
       it "sets the flash notice" do
         book = stub_book
-        stub_review
+        stub_save_review(success: true)
 
         post :create, book_id: book.id, review: { body: "" }
 
@@ -23,13 +23,13 @@ RSpec.describe ReviewsController, type: :controller do
     end
 
     context "when the review is invalid" do
-      it "redirects back to the book" do
+      it "renders the book page" do
         book = stub_book
-        stub_review
+        stub_save_review(success: false)
 
         post :create, book_id: book.id, review: { body: "" }
 
-        expect(response).to redirect_to book_path(book.id)
+        expect(response).to render_template("books/show")
       end
     end
   end
@@ -45,8 +45,8 @@ RSpec.describe ReviewsController, type: :controller do
     end
   end
 
-  def stub_review
-    instance_double("Review", save: true).tap do |review|
+  def stub_save_review(success:)
+    instance_double("Review", save: success).tap do |review|
       allow(Review).to receive(:new).and_return(review)
     end
   end

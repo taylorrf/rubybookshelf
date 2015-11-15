@@ -32,4 +32,16 @@ RSpec.describe BookFacade do
       expect(result).to eq(policy)
     end
   end
+
+  describe "#new_review" do
+    it "returns a new Review" do
+      book = double(:book)
+      user = double(:user)
+      facade = BookFacade.new(book: book, current_user: user)
+
+      result = facade.new_review
+
+      expect(result).to be_a(Review)
+    end
+  end
 end

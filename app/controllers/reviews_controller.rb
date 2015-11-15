@@ -3,9 +3,12 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.new review_params
-    review.save
-    redirect_to book_path(book),
-                notice: t("reviews.create.notice")
+
+    if review.save
+      redirect_to book_path(book), notice: t("reviews.create.notice")
+    else
+      render template: "books/show", locals: { facade: book_facade }
+    end
   end
 
   private
@@ -19,5 +22,9 @@ class ReviewsController < ApplicationController
 
   def book
     @_book ||= Book.find params[:book_id]
+  end
+
+  def book_facade
+    BookFacade.new(book: book, current_user: current_user)
   end
 end
